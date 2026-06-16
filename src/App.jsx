@@ -709,7 +709,7 @@ const services = [
     icon: "⚡",
     title: "Automação de Processos",
     subtitle: "N8N · Make · Zapier",
-    desc: "Elimine tarefas manuais e repetitivas integrando seus sistemas. Fluxos inteligentes que trabalham 24/7 no lugar da sua equipe, com rastreabilidade e zero retrabalho.",
+    desc: "Elimine tarefas manuais e repetitivas integrando seus sistemas. Fluxos inteligentes que trabalham 24/7, com rastreabilidade e zero retrabalho.",
     features: ["Integração entre sistemas heterogêneos", "Fluxos de aprovação automatizados", "Notificações e alertas em tempo real", "Sincronização e reconciliação de dados"],
     badge: "Mais popular"
   },
@@ -722,12 +722,44 @@ const services = [
     badge: "Alta demanda"
   },
   {
+    icon: "🧠",
+    title: "Prompt Engineering",
+    subtitle: "LLMs · GPT · Gemini · Claude",
+    desc: "Design e otimização de prompts para LLMs em contextos de produção. Estruturo sistemas de prompts robustos que entregam resultados consistentes, previsíveis e seguros.",
+    features: ["Arquitetura de system prompts para produção", "Chain-of-thought e few-shot structuring", "Guardrails e controle de saída", "Avaliação e benchmarking de performance"],
+    badge: null
+  },
+  {
     icon: "🔌",
     title: "Integrações de API",
     subtitle: "REST · Webhooks · OAuth",
-    desc: "Conectamos qualquer sistema ao seu ecossistema digital. Se tem API, conseguimos integrar — independente da complexidade ou legado do sistema.",
-    features: ["Mapeamento e documentação de endpoints", "Autenticação segura (OAuth, JWT, API Key)", "Tratamento de erros, retry e fallback", "Monitoramento de disponibilidade"],
+    desc: "Conectamos qualquer sistema ao seu ecossistema digital. Se tem API, integramos — independente da complexidade ou legado do sistema.",
+    features: ["Mapeamento e documentação de endpoints", "Autenticação segura (OAuth, JWT, API Key)", "Tratamento de erros, retry e fallback", "Monitoramento e alertas de disponibilidade"],
     badge: null
+  },
+  {
+    icon: "🚀",
+    title: "Desenvolvimento Full Stack",
+    subtitle: "React · Node.js · JavaScript",
+    desc: "Aplicações web modernas do frontend ao backend. Interfaces reativas com React e APIs robustas com Node.js — código limpo, tipado e pronto para escalar.",
+    features: ["SPAs e interfaces reativas com React", "APIs RESTful com Node.js + Express", "Integração com bancos de dados (SQL e NoSQL)", "Deploy automatizado e otimização de performance"],
+    badge: null
+  },
+  {
+    icon: "📦",
+    title: "DevOps & Containerização",
+    subtitle: "Docker · CI/CD · Deploy",
+    desc: "Ambientes reproduzíveis, deploys automatizados e infraestrutura como código. Seu projeto rodando de forma consistente em qualquer ambiente.",
+    features: ["Containerização com Docker e Docker Compose", "Pipelines de CI/CD automatizados", "Gerenciamento de variáveis e secrets", "Monitoramento e logs em produção"],
+    badge: null
+  },
+  {
+    icon: "☁️",
+    title: "SaaS & Produtos Digitais",
+    subtitle: "Produto · Arquitetura · Escala",
+    desc: "Do zero ao produto: estruturo a arquitetura, desenvolvo o MVP e preparo o produto para crescer. Foco em time-to-market rápido sem abrir mão de qualidade técnica.",
+    features: ["Arquitetura escalável desde o início", "Autenticação, billing e multitenancy", "Onboarding e experiência do usuário", "Instrumentação, analytics e iteração rápida"],
+    badge: "Novo"
   },
   {
     icon: "💬",
@@ -741,7 +773,7 @@ const services = [
     icon: "📊",
     title: "Dashboards & BI",
     subtitle: "Power BI · Supabase · Excel",
-    desc: "Transformamos dados brutos em painéis estratégicos. Visualize KPIs em tempo real e tome decisões embasadas — não baseadas em feeling.",
+    desc: "Transformamos dados brutos em painéis estratégicos. Visualize KPIs em tempo real e tome decisões embasadas em dados — não em feeling.",
     features: ["KPIs e métricas em tempo real", "Relatórios automáticos agendados", "Alertas inteligentes por threshold", "Consolidação de múltiplas fontes de dados"],
     badge: null
   }
@@ -800,30 +832,16 @@ const stack = [
 const experience = [
   {
     role: "Analista de Automações Sênior",
-    company: "Setor Financeiro · Crédito Consignado",
+    company: "Tecnologia · Automação & IA",
     period: "Mar/2025 – Atual",
-    desc: "Liderança técnica na automação end-to-end de processos críticos de negócio: arquitetura de agentes de IA, integração com APIs bancárias e orquestração de fluxos complexos via N8N. Responsável por eliminar intervenção manual em operações de alto volume, reduzindo erros a zero e escalando capacidade produtiva sem aumento proporcional de equipe.",
+    desc: "Liderança técnica no desenvolvimento de agentes de IA, integrações de API e fluxos de automação complexos com N8N. Arquitetura de soluções full stack que eliminam trabalho manual em operações de alto volume — reduzindo erros a zero e escalando capacidade produtiva sem aumento de equipe.",
     active: true
   },
   {
-    role: "Analista Comercial & Inteligência de Dados",
-    company: "Setor Financeiro · Crédito Consignado",
+    role: "Analista de Dados & Business Intelligence",
+    company: "Tecnologia · Dados & Analytics",
     period: "Jul/2024 – Mar/2025",
-    desc: "Suporte estratégico a parceiros B2B com uso de análise de dados para mapear gargalos, identificar oportunidades de retenção e construir dashboards de acompanhamento de carteira. Interface com bancos parceiros e resolução de casos críticos com foco em fidelização.",
-    active: false
-  },
-  {
-    role: "Operador · Digitação e Atendimento",
-    company: "Setor Financeiro · Crédito Consignado",
-    period: "Jul/2022 – Jun/2024",
-    desc: "Digitação e validação de dados nos sistemas bancários com rigor em precisão e compliance (LGPD). Experiência direta na operação que hoje é automatizada — base fundamental para desenhar soluções que resolvem o problema real, não apenas o sintoma.",
-    active: false
-  },
-  {
-    role: "Sócio Administrativo",
-    company: "Lava&Leva Lavanderias",
-    period: "2015 – 2017",
-    desc: "Gestão integral da unidade: fluxo de caixa, controle de estoque e atendimento ao cliente. Desenvolvimento de visão empreendedora e responsabilidade financeira desde cedo — base para entender o negócio antes de automatizá-lo.",
+    desc: "Estruturação de área de dados: construção de dashboards estratégicos em Power BI, criação de pipelines ETL e análise granular de KPIs para identificação de gargalos operacionais. Tradução de dados brutos em insights acionáveis para decisão de negócio.",
     active: false
   }
 ];
@@ -904,10 +922,9 @@ export default function App() {
           </p>
 
           <p className="hero-desc">
-            Graduando em Ciência da Computação com trajetória sólida no mercado financeiro.
-            Especializado em arquitetar automações complexas, integrar IA generativa a processos
-            de negócio e transformar operações manuais em fluxos inteligentes, escaláveis e
-            orientados a resultado mensurável.
+            Desenvolvedor e especialista em automação com foco em IA, APIs e produtos digitais.
+            Construo soluções full stack, agentes autônomos e fluxos inteligentes que escalam
+            operações sem aumentar custo — do backend ao deploy, do prompt ao produto.
           </p>
 
           <div className="hero-actions">
@@ -922,7 +939,7 @@ export default function App() {
           <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-num">3+</div>
-              <div className="stat-label">anos no setor financeiro</div>
+              <div className="stat-label">anos em tecnologia</div>
             </div>
             <div className="stat-item">
               <div className="stat-num">20+</div>
@@ -930,7 +947,7 @@ export default function App() {
             </div>
             <div className="stat-item">
               <div className="stat-num">E2E</div>
-              <div className="stat-label">do negócio ao deploy</div>
+              <div className="stat-label">do código ao produto</div>
             </div>
           </div>
         </div>
@@ -945,22 +962,23 @@ export default function App() {
           <div>
             <h2 className="section-title">Na interseção entre<br /><span style={{ color: "var(--cyan)" }}>negócios e tecnologia</span></h2>
             <p className="about-text" style={{ marginTop: 24 }}>
-              Comecei na <span className="about-highlight">operação de um mercado financeiro</span>, entendia profundamente as dores do processo antes de automatizá-lo.
-              Essa visão de negócio combinada com expertise técnica é o que me diferencia — não crio automações genéricas,{" "}
-              <span className="about-highlight">crio soluções que entendem o contexto do problema.</span>
+              Sou desenvolvedor com especialização em <span className="about-highlight">automação, IA e produtos digitais</span>.
+              Entendo o problema de negócio antes de escrever a primeira linha — e isso me permite construir
+              soluções que realmente funcionam em produção, não só em demonstração.{" "}
+              <span className="about-highlight">Código que resolve problema real.</span>
             </p>
             <p className="about-text" style={{ marginTop: 20 }}>
-              Hoje atuo como <span className="about-highlight">Analista de Automações Sênior</span> no setor financeiro, liderando a implementação de soluções
-              que eliminam trabalho manual, reduzem erros operacionais e escalam capacidade produtiva —
-              unindo visão de negócio com arquitetura técnica robusta e orientada a resultado.
+              Atuo como <span className="about-highlight">Analista de Automações Sênior</span>, desenvolvendo agentes de IA,
+              integrações de API, produtos SaaS e aplicações full stack com React e Node.js —
+              sempre com foco em escalabilidade, manutenibilidade e impacto direto no resultado.
             </p>
           </div>
           <div className="about-info">
             {[
               { label: "Localização", value: "Fortaleza, CE — Brasil" },
               { label: "Formação", value: "Ciência da Computação · Estácio (2026)" },
-              { label: "Cargo atual", value: "Analista de Automações Sênior · Setor Financeiro" },
-              { label: "Foco", value: "Automação · IA Generativa · APIs" },
+              { label: "Cargo atual", value: "Analista de Automações Sênior · Tecnologia" },
+              { label: "Foco", value: "Automação · IA · Full Stack · SaaS" },
               { label: "Idiomas", value: "Português · Inglês (intermediário) · Espanhol (intermediário)" },
             ].map(item => (
               <div key={item.label} className="info-item">
@@ -1080,8 +1098,8 @@ export default function App() {
         <div className="section-label">Experiência</div>
         <h2 className="section-title">Trajetória<br /><span style={{ color: "var(--cyan)" }}>profissional</span></h2>
         <p className="section-sub">
-          Cada etapa da carreira construiu a base técnica e de negócio que aplico hoje —
-          da operação ao desenvolvimento de soluções de ponta.
+          Uma trajetória construída em cima de tecnologia — da análise de dados ao desenvolvimento
+          de produtos, sempre com foco em resolver problemas reais com código.
         </p>
         <div className="timeline">
           {experience.map((item, i) => (
