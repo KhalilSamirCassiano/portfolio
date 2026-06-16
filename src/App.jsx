@@ -787,38 +787,43 @@ const stack = [
   { name: "Webhooks", cat: "Integração" },
   { name: "LLMs / IA Gen.", cat: "IA" },
   { name: "RAG", cat: "IA" },
+  { name: "Prompt Engineering", cat: "IA" },
   { name: "Redis", cat: "Infra" },
+  { name: "Docker", cat: "Infra" },
   { name: "Python", cat: "Dev" },
+  { name: "JavaScript", cat: "Dev" },
+  { name: "React", cat: "Dev" },
+  { name: "Node.js", cat: "Dev" },
   { name: "Git", cat: "Dev" },
 ];
 
 const experience = [
   {
-    role: "Product Growth Manager",
-    company: "Finanbank Consultoria Financeira",
+    role: "Analista de Automações Sênior",
+    company: "Setor Financeiro · Crédito Consignado",
     period: "Mar/2025 – Atual",
-    desc: "Responsável pela estratégia de crescimento de produtos financeiros, utilizando análise de dados para identificar oportunidades de inovação. Liderança na transformação digital da empresa, idealizando e gerenciando o desenvolvimento de soluções que automatizam o atendimento e aumentam a conversão de vendas.",
+    desc: "Liderança técnica na automação end-to-end de processos críticos de negócio: arquitetura de agentes de IA, integração com APIs bancárias e orquestração de fluxos complexos via N8N. Responsável por eliminar intervenção manual em operações de alto volume, reduzindo erros a zero e escalando capacidade produtiva sem aumento proporcional de equipe.",
     active: true
   },
   {
-    role: "Assistente Comercial",
-    company: "Finanbank Consultoria Financeira",
+    role: "Analista Comercial & Inteligência de Dados",
+    company: "Setor Financeiro · Crédito Consignado",
     period: "Jul/2024 – Mar/2025",
-    desc: "Suporte estratégico a parceiros B2B, resolução de casos críticos e interface com bancos parceiros. Garantindo retenção e fidelização da carteira de clientes.",
+    desc: "Suporte estratégico a parceiros B2B com uso de análise de dados para mapear gargalos, identificar oportunidades de retenção e construir dashboards de acompanhamento de carteira. Interface com bancos parceiros e resolução de casos críticos com foco em fidelização.",
     active: false
   },
   {
-    role: "Digitador Operacional / Operador de Call Center",
-    company: "Finanbank Consultoria Financeira",
+    role: "Operador · Digitação e Atendimento",
+    company: "Setor Financeiro · Crédito Consignado",
     period: "Jul/2022 – Jun/2024",
-    desc: "Responsável pela entrada, validação de dados e digitação nos sistemas bancários com foco em precisão e compliance (LGPD). Desenvolvimento de resiliência e habilidade de negociação através do atendimento direto ao cliente.",
+    desc: "Digitação e validação de dados nos sistemas bancários com rigor em precisão e compliance (LGPD). Experiência direta na operação que hoje é automatizada — base fundamental para desenhar soluções que resolvem o problema real, não apenas o sintoma.",
     active: false
   },
   {
     role: "Sócio Administrativo",
     company: "Lava&Leva Lavanderias",
     period: "2015 – 2017",
-    desc: "Gestão integral da unidade, incluindo fluxo de caixa, controle de estoque e atendimento ao cliente, desenvolvendo visão de dono e responsabilidade financeira.",
+    desc: "Gestão integral da unidade: fluxo de caixa, controle de estoque e atendimento ao cliente. Desenvolvimento de visão empreendedora e responsabilidade financeira desde cedo — base para entender o negócio antes de automatizá-lo.",
     active: false
   }
 ];
@@ -859,9 +864,9 @@ export default function App() {
       <nav className="nav">
         <span className="nav-logo">KS.dev</span>
         <div className="nav-links">
-          {["sobre", "servicos", "projetos", "contato"].map(s => (
+          {["sobre", "servicos", "projetos", "experiencia", "contato"].map(s => (
             <button key={s} className="nav-link" onClick={() => scrollTo(s)}>
-              {s === "servicos" ? "serviços" : s}
+              {s === "servicos" ? "serviços" : s === "experiencia" ? "experiência" : s}
             </button>
           ))}
         </div>
@@ -899,9 +904,10 @@ export default function App() {
           </p>
 
           <p className="hero-desc">
-            Graduando em Ciência da Computação com trajetória no mercado financeiro.
-            Especialista em orquestrar automações complexas, integrar IA generativa a
-            processos de negócio e transformar operações manuais em fluxos inteligentes e escaláveis.
+            Graduando em Ciência da Computação com trajetória sólida no mercado financeiro.
+            Especializado em arquitetar automações complexas, integrar IA generativa a processos
+            de negócio e transformar operações manuais em fluxos inteligentes, escaláveis e
+            orientados a resultado mensurável.
           </p>
 
           <div className="hero-actions">
@@ -915,11 +921,11 @@ export default function App() {
 
           <div className="hero-stats">
             <div className="stat-item">
-              <div className="stat-num">1+</div>
-              <div className="stat-label">anos em automação</div>
+              <div className="stat-num">3+</div>
+              <div className="stat-label">anos no setor financeiro</div>
             </div>
             <div className="stat-item">
-              <div className="stat-num">15+</div>
+              <div className="stat-num">20+</div>
               <div className="stat-label">stacks dominadas</div>
             </div>
             <div className="stat-item">
@@ -944,16 +950,16 @@ export default function App() {
               <span className="about-highlight">crio soluções que entendem o contexto do problema.</span>
             </p>
             <p className="about-text" style={{ marginTop: 20 }}>
-              Hoje atuo como <span className="about-highlight">Product Growth Manager</span> na Finanbank, liderando a transformação digital da empresa
-              enquanto desenvolvo soluções que automatizam atendimento e aumentam conversão —
-              unindo estratégia comercial com arquitetura técnica escalável.
+              Hoje atuo como <span className="about-highlight">Analista de Automações Sênior</span> no setor financeiro, liderando a implementação de soluções
+              que eliminam trabalho manual, reduzem erros operacionais e escalam capacidade produtiva —
+              unindo visão de negócio com arquitetura técnica robusta e orientada a resultado.
             </p>
           </div>
           <div className="about-info">
             {[
               { label: "Localização", value: "Fortaleza, CE — Brasil" },
               { label: "Formação", value: "Ciência da Computação · Estácio (2026)" },
-              { label: "Cargo atual", value: "Product Growth Manager · Finanbank" },
+              { label: "Cargo atual", value: "Analista de Automações Sênior · Setor Financeiro" },
               { label: "Foco", value: "Automação · IA Generativa · APIs" },
               { label: "Idiomas", value: "Português · Inglês (intermediário) · Espanhol (intermediário)" },
             ].map(item => (
@@ -1069,6 +1075,29 @@ export default function App() {
 
       <hr className="divider" />
 
+      {/* EXPERIENCE */}
+      <section id="experiencia" style={{ padding: "100px 32px", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="section-label">Experiência</div>
+        <h2 className="section-title">Trajetória<br /><span style={{ color: "var(--cyan)" }}>profissional</span></h2>
+        <p className="section-sub">
+          Cada etapa da carreira construiu a base técnica e de negócio que aplico hoje —
+          da operação ao desenvolvimento de soluções de ponta.
+        </p>
+        <div className="timeline">
+          {experience.map((item, i) => (
+            <div key={i} className="tl-item">
+              <div className={`tl-dot${item.active ? " active" : ""}`} />
+              <div className="tl-period">{item.period}</div>
+              <div className="tl-role">{item.role}</div>
+              <div className="tl-company">{item.company}</div>
+              <p className="tl-desc">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="divider" />
+
       {/* STACK */}
       <section style={{ padding: "80px 32px", maxWidth: 1200, margin: "0 auto" }}>
         <div className="section-label">Stack técnica</div>
@@ -1102,39 +1131,3 @@ export default function App() {
       <hr className="divider" />
 
       {/* CONTACT */}
-      <section id="contato" style={{ padding: "100px 32px", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="section-label">Contato</div>
-        <h2 className="section-title">Vamos construir<br /><span style={{ color: "var(--cyan)" }}>algo juntos?</span></h2>
-        <p className="section-sub">
-          Seja para um projeto pontual ou uma parceria contínua,
-          estou disponível para conversar sobre sua necessidade.
-        </p>
-
-        <div className="contact-grid">
-          {[
-            { label: "E-mail", value: "cassianokhalil@gmail.com", href: "mailto:cassianokhalil@gmail.com" },
-            { label: "WhatsApp", value: "(85) 99787-0363", href: "https://wa.me/5585997870363" },
-            { label: "LinkedIn", value: "khalil-samir", href: "https://www.linkedin.com/in/khalil-samir-6b34b9230" },
-            { label: "Localização", value: "Fortaleza, CE — Brasil", href: null },
-          ].map(c => (
-            <div key={c.label} className="contact-item">
-              <div className="contact-label">{c.label}</div>
-              {c.href
-                ? <a href={c.href} className="contact-value" target="_blank" rel="noreferrer">{c.value}</a>
-                : <div className="contact-value">{c.value}</div>
-              }
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="footer" style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <span className="footer-text">© 2025 Khalil Cassiano · Fortaleza, CE</span>
-        <span className="footer-text" style={{ color: "var(--cyan)", opacity: 0.6 }}>
-          Automação · IA · APIs
-        </span>
-      </footer>
-    </>
-  );
-}
