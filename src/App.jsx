@@ -1131,3 +1131,39 @@ export default function App() {
       <hr className="divider" />
 
       {/* CONTACT */}
+      <section id="contato" style={{ padding: "100px 32px", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="section-label">Contato</div>
+        <h2 className="section-title">Vamos construir<br /><span style={{ color: "var(--cyan)" }}>algo juntos?</span></h2>
+        <p className="section-sub">
+          Seja para um projeto pontual ou uma parceria contínua,
+          estou disponível para conversar sobre sua necessidade.
+        </p>
+
+        <div className="contact-grid">
+          {[
+            { label: "E-mail", value: "cassianokhalil@gmail.com", href: "mailto:cassianokhalil@gmail.com" },
+            { label: "WhatsApp", value: "(85) 99787-0363", href: "https://wa.me/5585997870363" },
+            { label: "LinkedIn", value: "khalil-samir", href: "https://www.linkedin.com/in/khalil-samir-6b34b9230" },
+            { label: "Localização", value: "Fortaleza, CE — Brasil", href: null },
+          ].map(c => (
+            <div key={c.label} className="contact-item">
+              <div className="contact-label">{c.label}</div>
+              {c.href
+                ? <a href={c.href} className="contact-value" target="_blank" rel="noreferrer">{c.value}</a>
+                : <div className="contact-value">{c.value}</div>
+              }
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer" style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <span className="footer-text">© 2026 Khalil Cassiano · Fortaleza, CE</span>
+        <span className="footer-text" style={{ color: "var(--cyan)", opacity: 0.6 }}>
+          Automação · IA · APIs
+        </span>
+      </footer>
+    </>
+  );
+}
