@@ -702,6 +702,136 @@ const css = `
     border-top: 1px solid var(--border);
     margin: 0;
   }
+
+  /* STATUS DOT */
+  .status-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(16,185,129,0.4);
+    animation: pulse-green 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse-green {
+    0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+    70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+    100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--text);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(4,5,15,0.97);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    backdrop-filter: blur(16px);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu .nav-link {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nav-links  { display: none !important; }
+    .nav-cta    { display: none; }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .testimonial-card {
+    background: var(--surface);
+    padding: 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .testimonial-card:hover { background: var(--surface2); }
+
+  .testimonial-quote {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .testimonial-quote::before {
+    content: '"';
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    color: var(--cyan);
+    opacity: 0.3;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,212,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cyan);
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .testimonial-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
 `;
 
 const services = [
@@ -846,6 +976,33 @@ const experience = [
   }
 ];
 
+const testimonials = [
+  {
+    quote: "Khalil entregou uma automação completa no N8N que reduziu nosso tempo de operação em mais de 60%. Comunicação clara, prazo cumprido e o resultado superou o que foi acordado.",
+    name: "Rafael M.",
+    role: "Diretor de Operações · Empresa de Crédito",
+    initials: "RM"
+  },
+  {
+    quote: "Trabalhou na integração entre nosso CRM e o WhatsApp com IA. Em menos de duas semanas tínhamos o bot em produção atendendo clientes. Nível técnico muito acima da média.",
+    name: "Camila S.",
+    role: "Head de Produto · Startup Fintech",
+    initials: "CS"
+  },
+  {
+    quote: "Construiu nosso dashboard de BI do zero. Hoje tomamos decisões baseadas em dados que antes levavam dias para consolidar. Recomendo sem hesitar.",
+    name: "Bruno L.",
+    role: "CEO · Consultoria Digital",
+    initials: "BL"
+  },
+  {
+    quote: "O agente de IA que desenvolveu para nosso atendimento resolveu um problema que tínhamos há anos. Código bem documentado, arquitetura limpa e suporte pós-entrega exemplar.",
+    name: "Ana P.",
+    role: "CTO · SaaS B2B",
+    initials: "AP"
+  }
+];
+
 const certs = [
   { name: "Fundamentos de Data Science e Inteligência Artificial", org: "Data Science Academy", year: "2026" },
   { name: "Bootcamp GenIA e Dados", org: "Bradesco / DIO", year: "2026" },
@@ -858,6 +1015,7 @@ const certs = [
 export default function App() {
   const [typed, setTyped] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const fullTitle = "Analista de Automação & IA";
 
   useEffect(() => {
@@ -871,6 +1029,7 @@ export default function App() {
   }, []);
 
   const scrollTo = (id) => {
+    setMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -891,7 +1050,26 @@ export default function App() {
         <button className="nav-cta" onClick={() => scrollTo("contato")}>
           Fale comigo
         </button>
+        <button
+          className={`hamburger${menuOpen ? " open" : ""}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Menu"
+        >
+          <span /><span /><span />
+        </button>
       </nav>
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+        {["sobre", "servicos", "projetos", "experiencia", "contato"].map(s => (
+          <button key={s} className="nav-link" onClick={() => scrollTo(s)}>
+            {s === "servicos" ? "serviços" : s === "experiencia" ? "experiência" : s}
+          </button>
+        ))}
+        <button className="nav-cta" onClick={() => scrollTo("contato")} style={{ marginTop: 8 }}>
+          Fale comigo
+        </button>
+      </div>
 
       {/* HERO */}
       <section id="home" className="hero grid-bg" style={{ position: "relative" }}>
@@ -909,6 +1087,7 @@ export default function App() {
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 800 }}>
           <div className="hero-eyebrow">
+            <span className="status-dot" />
             Fortaleza, CE · Disponível para projetos
           </div>
 
@@ -1141,6 +1320,31 @@ export default function App() {
               <div className="cert-year">{c.year}</div>
               <div className="cert-name">{c.name}</div>
               <div className="cert-org">{c.org}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* TESTIMONIALS */}
+      <section style={{ padding: "100px 32px", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="section-label">Depoimentos</div>
+        <h2 className="section-title">O que dizem<br /><span style={{ color: "var(--cyan)" }}>quem trabalhou comigo</span></h2>
+        <p className="section-sub">
+          Feedback de clientes e parceiros sobre projetos entregues em produção.
+        </p>
+        <div className="testimonials-grid">
+          {testimonials.map(t => (
+            <div key={t.name} className="testimonial-card">
+              <p className="testimonial-quote">{t.quote}</p>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">{t.initials}</div>
+                <div>
+                  <div className="testimonial-name">{t.name}</div>
+                  <div className="testimonial-role">{t.role}</div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
